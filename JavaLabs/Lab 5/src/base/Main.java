@@ -1,4 +1,5 @@
 package base;
+import java.util.Scanner;
 
 public class Main {
     /**
@@ -29,18 +30,59 @@ public class Main {
 
     public static void main(String[] args) {
         //	Replace this with your dry inventory function!
-        wet_inventory();
+        lemonadeFunc();
+
+        // My print statements for what inventory and totals we end up with
+        System.out.println("Pretzels Stock Remaining: " + pretzels_available);
+        System.out.println("Lemonade Stock Remaining: " + lemonades_available);
+        System.out.println("Total Tips Recieved: " + tips);
+        System.out.println("Total cash recieved: " + cash);
     }
 
-    static void dry_inventory() {
+    static void lemonadeFunc() {
         // Your DRY Solution goes here!
+        //Scanner install and initialization
+        Scanner customerPurchases = new Scanner(System.in);
+        int pretzelAmount = 0;
+        int lemonadeAmount = 0;
+        double numTips = 0;
+        double totalTips = 0;
+
+
+        // for loop to loop the first 15 customers
+        for (int numCustomers = 1; numCustomers <= 15; numCustomers++ ){
+
+            System.out.println(" ");
+
+            // Calculating pretzel stock + adding cash
+            System.out.println("Enter amount of pretzels bought: ");
+            pretzelAmount = customerPurchases.nextInt();
+            pretzels_available -= pretzelAmount;
+            cash += (pretzelAmount * 2);
+
+            // Calculating lemonade stock + adding cash
+            System.out.println("Enter amount of lemonade purchased: ");
+            lemonadeAmount = customerPurchases.nextInt();
+            lemonades_available -= lemonadeAmount;
+            cash += (lemonadeAmount * 2);
+
+            // Calculating cash + tip totals (NOT added together!!!)
+            System.out.println("Tip amount recieved: ");
+            numTips = customerPurchases.nextDouble();
+            tips += numTips;
+
+
+        }
     }
 
     static void wet_inventory() {
         /**
          * We have 10 customers in the first hour! This is what they bought! When running this with your dry code you
          * don't want to run this function because then the numbers in the end will be wrong!
+         * 
+         * 
          */
+
         //Customer 1
         pretzels_available -= 4;
         cash += 8;
