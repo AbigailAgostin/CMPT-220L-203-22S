@@ -1,0 +1,12 @@
+Index: JavaLabs/Lab 7/ListItem.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JavaLabs/Lab 7/ListItem.java b/JavaLabs/Lab 7/ListItem.java
+new file mode 100644
+--- /dev/null	(date 1648688243296)
++++ b/JavaLabs/Lab 7/ListItem.java	(date 1648688243296)
+@@ -0,0 +1,2 @@
++public class ListItem {
++}
